@@ -41,10 +41,28 @@ kitty.alt = 'picture of a cool cat';
 //add this to the body of the page
 document.body.appendChild(kitty);
 
+//function for onPuppyClick
+function onPuppyClick() {
+ //alert('you clicked my puppy!');
+ document.getElementById('bark').play();
+} //onPuppyClick()
 
+//selecting the puppy-pic element
+var pup = document.getElementById('puppy-pic');
 
+if (pup.addEventListener) {
+	pup.addEventListener('click', onPuppyClick);
+}
+else if (pup.attachEvent) {
+	pup.attachEvent('click', onPuppyClick);
+}
 
-
+document.addEventListener('DOMContentLoaded', function(){
+	//add event listeners for elements
+	//manipulate the DOM
+	alert("The DOM is ready!");
+	onPuppyClick();
+});
 
 
 
